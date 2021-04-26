@@ -1,5 +1,8 @@
 # Lifting State Up
-In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called “lifting state up”. We will remove the local state from the TemperatureInput and move it into the Calculator instead.
+'In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called “lifting state up”. We will remove the local state from the TemperatureInput and move it into the Calculator instead.' 
+Lifting up the State: every component in React has its own state. Because of this sometimes data can be redundant and inconsistent. So, by Lifting up the state we make the state of the parent component as a single source of truth and pass the data of the parent in its children.
+
+Time to use Lift up the State: If the data in “parent and children components” or in “cousin components” is Not in Sync.
 
 ![img](rr2.png)
 ![img](rr1.png)
