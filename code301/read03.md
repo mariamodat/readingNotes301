@@ -1,90 +1,36 @@
 # Lifting State Up
-'In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called “lifting state up”. We will remove the local state from the TemperatureInput and move it into the Calculator instead.' 
+
 Lifting up the State: every component in React has its own state. Because of this sometimes data can be redundant and inconsistent. So, by Lifting up the state we make the state of the parent component as a single source of truth and pass the data of the parent in its children.
 
-Time to use Lift up the State: If the data in “parent and children components” or in “cousin components” is Not in Sync.
 
-![img](rr2.png)
-![img](rr1.png)
+## what does .map() do ?
+map() function returns a map object(which is an iterator) of the results after applying the given function to each item of a given iterable (list, tuple ..) 
+fun : It is a function to which map passes each element of given iterable.
 
-# Adding a Second Input
-Our new requirement is that, in addition to a Celsius input, we provide a Fahrenheit input, and they are kept in sync.
-
-We can start by extracting a TemperatureInput component from Calculator. We will add a new scale prop to it that can either be "c" or "f"
-
-# Writing Conversion Functions
- * function toCelsius(fahrenheit) {
-  return (fahrenheit - 32) * 5 / 9;
-}
-
-* function toFahrenheit(celsius) {
-  return (celsius * 9 / 5) + 32;
-}
-
-**These two functions convert numbers**
-we need a function that takes a string temperature and a converter function as arguments and returns a string.
-* We will use it to calculate the value of one input based on the other input.
-
-It returns an empty string on an invalid temperature, and it keeps the output rounded to the third decimal place:
-
-* function tryConvert(temperature, convert) {
-  const input = parseFloat(temperature);
-  if (Number.isNaN(input)) {
-    return '';
-  }
- * const output = convert(input);
-  const rounded = Math.round(output * 1000) / 1000;
-  return rounded.toString();
-}
-
-For example, tryConvert('abc', toCelsius) returns an empty string, and
-
-# Lifting State Up
-
-![img](rr3.png)
+## If I want to loop through an array and display each value in JSX, how do I do that in React?
+const elements = [] //..some array const items = [] for (const [index, value] of elements. entries()) { items. ...
+render() { const elements = ['one', 'two', 'three']; const items = [] for (const [index, value] of elements. ...
+render: function() { const elements = ['one', 'two', 'three']; return ( <ul> {elements.
 
 
-# Lists and Keys
-Rendering Multiple Components
-* we can build collections of elements and include them in JSX using curly braces {}.
 
-* Below, we loop through the numbers array using the JavaScript map() function. We return a <li> element for each item. Finally, we assign the resulting array of elements to listItems:
 
-* const numbers = [1, 2, 3, 4, 5];
-const listItems = numbers.map((number) =>
-  <li>{number}</li>
-);
-We include the entire listItems array inside a <ul> element, and render it to the DOM:
+# What is the purpose of a key?
+Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity: Example: const numbers = [1, 2, 3, 4, 5]; const listItems = numbers.
 
-* ReactDOM.render(
-  <ul>{listItems}</ul>,
-  document.getElementById('root')
-);
 
 ## Keys
 Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity
 
-## Extracting Components with Keys
-function ListItem(props) {
-  // Correct! There is no need to specify the key here:
-  return < li>{props.value}</ li>;
-}
+# How to Use the Spread Operator (…) in JavaScript
+## what is spread operator ?
+The spread operator is a new addition to the set of operators in JavaScript ES6. It takes in an iterable (e.g an array) and expands it into individual elements. The spread operator is commonly used to make shallow copies of JS objects. Using this operator makes the code concise and enhances its readability.
+## what does spread operator do ?
+* passing props
+* Generating multiple component instances with common props.
+* Setting the state with dynamic key name.
+* Adding a single item to the start or the end of an array.
+* Stripping properties using destructuring.
+Conclusion.
 
-function NumberList(props) {
-  const numbers = props.numbers;
-  const listItems = numbers.map((number) =>
-    // Correct! Key should be specified inside the array.
-    < ListItem key={number.toString()} value={number} />
-  );
-  return (
-    < ul>
-      {listItems}
-    </ ul>
-  );
-}
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  < NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
+![img](rrr1.PNG)
