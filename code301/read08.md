@@ -20,4 +20,9 @@ it returns HTTP status code 201 (Created), as with a POST method. If the method 
 ![img](https://www.abbreviations.com/images/47386_204.png)
 
 # References and Resorces 
-* M, S., A., J., A., Shah, K., & A. (2020, December 22). HTTP Status 200 (OK). REST API Tutorial.[status link] (https://restfulapi.net/http-status-200-ok/#:%7E:text=The%20HTTP%20Status%20200%20)(OK,which%20was%20selected%20for%20request.
+[link]( https://restfulapi.net/http-status-200-ok/#:%7E:text=The%20HTTP%20Status%20200%20)
+
+
+| reference | link |
+|-----------|------|
+| M, S., A., J., A., Shah, K., & A. (2020, December 22). HTTP Status 200 (OK). REST API Tutorial.| [reference link](https://restfulapi.net/http-status-200-ok/#:%7E:text=The%20HTTP%20Status%20200%20) | 
