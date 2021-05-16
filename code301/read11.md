@@ -33,4 +33,4 @@ The Resource Owner Password Credentials flow allows exchanging the username and 
 # References 
 | Reference | link|
 |-----------|-----|
-|OneLoginDeveloper| [OneLoginDeveloper](OneLogin Developers. (2015). OpenId Connect Auth Code Flow + PKCE - OneLogin API. https://developers.onelogin.com/openid-connect/guides/auth-flow-pkce) |
+|OneLogin Developers. (2015). OpenId Connect Auth Code Flow + PKCE - OneLogin API.| [OneLoginDeveloper]( https://developers.onelogin.com/openid-connect/guides/auth-flow-pkce) |
